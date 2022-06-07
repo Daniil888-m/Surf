@@ -864,8 +864,8 @@ var slideToggle = (target, duration = 500) => {
 /* Плавная прокрутка*/
 
 
-function smoothScroll(target, duration, effect) {
-	var target = document.querySelector(target);
+function smoothScroll(targets, duration, effect) {
+	var target = document.querySelector(targets);
 	var targetPosition = target.getBoundingClientRect().top; // distance wwith respect to element
 	var startPosition = window.pageYOffset; // distance with respect to browser
 	var distance = targetPosition - startPosition;
