@@ -8,6 +8,31 @@ $(function () {
 		asNavFor: '.dotts-slider',
 		infinite: true,
 	});
+	window.addEventListener('resize', function () {
+
+		$('.dotts-slider').slick({
+			slidesToShow: 4,
+			slidesToScroll: 1,
+			focusOnSelect: true,
+
+			asNavFor: '.main-header__slider',
+			responsive: [
+				{
+					breakpoint: 960,
+					settings: "unslick"
+				},],
+
+
+		});
+		$('.main-header__slider').slick({
+			fade: true,
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			waitForAnimate: false,
+			asNavFor: '.dotts-slider',
+			infinite: true,
+		});
+	})
 
 
 	$('.main-header .slick-arrow').addClass('icon_arrow-right');
@@ -210,7 +235,7 @@ if (iconMenu) {
 		menuNav.classList.toggle('_active');
 	})
 };
- // Dynamic Adapt v.1
+// Dynamic Adapt v.1
 // HTML data-da="where(uniq class name),when(breakpoint),position(digi)"
 // e.x. data-da=".item,992,2"
 // Andrikanych Yevhen 2020
@@ -386,7 +411,7 @@ document.querySelectorAll('.dropdown').forEach(function (dropDownWrapper) {
 	const dropDownList = dropDownWrapper.querySelector('.dropdown__list');
 	const dropDownListItems = dropDownList.querySelectorAll('.dropdown__item');
 	const dropDownInput = dropDownWrapper.querySelector('.dropdown__input_hidden');
-	let itemSelected = dropDownList.querySelector('.dropdown__item[selected]');
+	let itemSelected = dropDownList?.querySelector('.dropdown__item[selected]');
 
 	if (itemSelected) {
 		dropDownBtn.innerText = itemSelected.innerText;
@@ -961,4 +986,4 @@ mainGoodLabels.forEach(function (item) {
 })
 
 
-;
+	;
